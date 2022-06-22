@@ -1,3 +1,4 @@
+// function that helps us create the state
 import { useState } from "react";
 
 // function createState(state) {
@@ -22,11 +23,13 @@ import { useState } from "react";
 // });
 
 function Form() {
+	// create the state of the component
 	const [data, setData] = useState({});
 
 	return (
 		<form
 			onSubmit={(event) => {
+				// prevent the default behivoir of the form
 				event.preventDefault();
 				console.log(data);
 			}}
@@ -34,6 +37,7 @@ function Form() {
 			<input
 				type='text'
 				onChange={function (event) {
+					// Update the name property in the state
 					setData(function (data) {
 						return { ...data, name: event.target.value };
 					});
@@ -43,6 +47,7 @@ function Form() {
 			<input
 				type='email'
 				onChange={function (event) {
+					// Update the email property in the state
 					setData(function (data) {
 						return { ...data, email: event.target.value };
 					});
