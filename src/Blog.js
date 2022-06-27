@@ -1,3 +1,4 @@
+import Post from "./Post";
 import "./Blog.css";
 
 const posts = [
@@ -15,16 +16,16 @@ const posts = [
 		id: "askflhwasdfasfio234234",
 		title: "Post 2",
 		text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, cupiditate.",
-		image: "/logo512.png",
+		image: "/logo192.png",
 	},
 ];
 
 function Blog() {
 	return (
-		<div>
+		<div className='blog'>
 			{posts.map((post) => (
 				<div key={post.id}>
-					<h1>{post.title}</h1>
+					{/* <h1>{post.title}</h1>
 					{post.author ? (
 						<span>
 							authored by: {`${post.author.firstName} ${post.author.lastName}`}
@@ -33,7 +34,8 @@ function Blog() {
 						<span></span>
 					)}
 					<img src={post.image} alt={post.title} />
-					<p>{post.text}</p>
+					<p>{post.text}</p> */}
+					<Post title={post.title} image={post.image} text={post.text}></Post>
 				</div>
 			))}
 		</div>
